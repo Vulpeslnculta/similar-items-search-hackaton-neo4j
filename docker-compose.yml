@@ -1,0 +1,16 @@
+services:
+  neo4j:
+    image: neo4j:5
+    container_name: neo4j-listings
+    ports:
+      - "7474:7474"   # browser UI
+      - "7687:7687"   # bolt
+    environment:
+      # Set by start_neo4j.sh from password.txt. Only applied when the data volume is first created.
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:?run ./start_neo4j.sh instead of docker compose directly}
+      NEO4J_PLUGINS: '["graph-data-science"]'
+    volumes:
+      - neo4j-data:/data
+
+volumes:
+  neo4j-data:

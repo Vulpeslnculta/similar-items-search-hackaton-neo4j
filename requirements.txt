@@ -1,0 +1,8 @@
+neo4j>=5.20
+extruct>=0.17
+beautifulsoup4>=4.12
+lxml>=5.0
+requests>=2.31
+sentence-transformers>=3.0
+scikit-learn>=1.4
+playwright>=1.45
